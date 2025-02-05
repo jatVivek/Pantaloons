@@ -3,6 +3,11 @@ import PLPPage from "../../../pageObject/productListingPage";
 import SearchPage from "../../../pageObject/searchPage";
 
 describe('Test Suite 01', function(){
+    before(function(){
+        cy.fixture('example').then((data) =>{
+            this.data=data;
+        })
+    })
     beforeEach(function(){
         cy.visit('https://www.pantaloons.com/');
         const homePage = new HomePage();

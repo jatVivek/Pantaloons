@@ -19,11 +19,11 @@ class PLPPage {
 
     brandFiltrer() {
         cy.fixture("example").then((data) => {
-            // Ensure fixture data is loaded before proceeding
+            cy.wait(3000)
             cy.get(
-                "div.MuiAccordionSummary-content.Mui-expanded.MuiAccordionSummary-contentGutters.css-17o5nyn p.MuiTypography-root.MuiTypography-body1.PlpWeb_accordion-summary-text__2e3X5.css-9l3uo3"
-            ).then(() => {
-                cy.get("div.MuiAccordionDetails-root.PlpWeb_filter-action-content__sQwvH.css-u7qq7e")
+                ".MuiPaper-root.Mui-expanded > .MuiAccordionSummary-root > .MuiAccordionSummary-content > .MuiTypography-root"
+            ).click().then(() => {
+                cy.get(".MuiPaper-root.Mui-expanded > .MuiCollapse-root > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > .MuiAccordion-region > .MuiAccordionDetails-root")
                     .each(($e1, index) => {
                         const brandName = $e1.text().trim();
                         if (brandName.includes(data.brandName)) {
