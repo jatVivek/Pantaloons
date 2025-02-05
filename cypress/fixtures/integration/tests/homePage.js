@@ -1,6 +1,11 @@
 import HomePage from "../../../pageObject/homePage";
 
 describe('Test Suite 01', () => {
+    before(function(){
+        cy.fixture('example').then((data) =>{
+            this.data=data;
+        })
+    })
     beforeEach(function() {
         cy.visit('https://www.pantaloons.com/');
     });
@@ -11,6 +16,8 @@ describe('Test Suite 01', () => {
         homePage.womenMenuWrapper().should('be.visible');
         homePage.MenMenuWrapper().should('be.visible');
         homePage.kidsMenuWrapper().should('be.visible');
+        homePage.searchIcon().should('be.visible');
+        homePage.searchPlaceholder().should('be.visible');
     });
     it('TestCase02 - Verify the Menu Bar visibility', function(){
         const homePage = new HomePage(); 
@@ -29,8 +36,10 @@ describe('Test Suite 01', () => {
             homePage.kidsSubMenuBOYSTOPWEAR().should('be.visible');
             homePage.kidsSubMenuGIRLSBOTTOMWEAR().should('be.visible');
             homePage.kidsSubMenuGIRLSTOPWEAR().should('be.visible');
+            homePage.kidsMenuWrapper().trigger('mouseout');
         })
     })
+    
     
     
 });

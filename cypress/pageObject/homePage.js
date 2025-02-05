@@ -35,5 +35,11 @@ class HomePage {
     kidsSubMenuGIRLSTOPWEAR(){
         return cy.contains('GIRLS TOPWEAR');
     }
+    searchIcon(){
+        return cy.get("div[aria-label='search Icon']");
+    }
+    searchPlaceholder(){
+        return cy.get("input[placeholder='Search']");
+    }
 }
 export default HomePage;
