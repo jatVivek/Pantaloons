@@ -1,16 +1,18 @@
 import HomePage from "../../../pageObject/homePage";
 import PLPPage from "../../../pageObject/productListingPage";
+import SearchPage from "../../../pageObject/searchPage";
 
 describe('Test Suite 01', function(){
     before(function(){
         cy.fixture('example').then((data) =>{
-            this.data=data;
+            testData=data;
         })
     })
     beforeEach(function(){
         cy.visit('https://www.pantaloons.com/');
         const homePage = new HomePage();
-        const productCategory = this.data.productCategory;
+        const searchPage = new SearchPage();
+        const productCategory = data.productCategory;
         homePage.searchPlaceholder().type(productCategory).then(function(){
             cy.wait(3000).then(function(){
                 cy.contains('Shirts for Men').should('be.visible').click();
