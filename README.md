@@ -78,7 +78,7 @@ Pantaloons/
 ---
 
 ## 📩 **Contact & Support**  
-For any issues or suggestions, feel free to raise an **issue** or contact me at **[your email]**.  
+For any issues or suggestions, feel free to raise an **issue** or contact me at vivekjat10931@gmail.com .  
 
 **Happy Testing! 🚀**  
 
